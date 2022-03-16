@@ -1,0 +1,11 @@
+0000000000000000000000000000000000000000 46e74eaabcb0240480ce944db58317a0497fd166 DECLAN GANLY <d.ganly@hotmail.com> 1645282458 +0000	commit (initial): Initial commit
+46e74eaabcb0240480ce944db58317a0497fd166 dd664e7eb2acad8d6f2492be87f717e30abfdec6 DECLAN GANLY <d.ganly@hotmail.com> 1645284328 +0000	commit: generate welcome controller
+dd664e7eb2acad8d6f2492be87f717e30abfdec6 0000000000000000000000000000000000000000 DECLAN GANLY <d.ganly@hotmail.com> 1645286048 +0000	Branch: renamed refs/heads/main to refs/heads/main
+dd664e7eb2acad8d6f2492be87f717e30abfdec6 dd664e7eb2acad8d6f2492be87f717e30abfdec6 DECLAN GANLY <d.ganly@hotmail.com> 1645286048 +0000	Branch: renamed refs/heads/main to refs/heads/main
+dd664e7eb2acad8d6f2492be87f717e30abfdec6 6fe0f5c3dea15df6cf0b4648efca3b2815fcba94 DECLAN GANLY <d.ganly@hotmail.com> 1645287475 +0000	commit: Generate Note Model
+6fe0f5c3dea15df6cf0b4648efca3b2815fcba94 7ff9f1f1a290ac7f014f5f9ed76585fb82b8960e DECLAN GANLY <d.ganly@hotmail.com> 1645305444 +0000	commit: generate notes controller & add routes
+7ff9f1f1a290ac7f014f5f9ed76585fb82b8960e 096a4f7735f2aec511407c7e44cdd10c139e9cb1 DECLAN GANLY <d.ganly@hotmail.com> 1645308311 +0000	commit: Add note views
+096a4f7735f2aec511407c7e44cdd10c139e9cb1 cf79400a64dd046c78017db1575a7f487fa64f30 DECLAN GANLY <d.ganly@hotmail.com> 1645310653 +0000	commit: new views
+cf79400a64dd046c78017db1575a7f487fa64f30 72856e6b0ff81f7a9ea3066c8a9468cabe5981b2 DECLAN GANLY <d.ganly@hotmail.com> 1647467653 +0000	commit: First Commit.
+72856e6b0ff81f7a9ea3066c8a9468cabe5981b2 0000000000000000000000000000000000000000 DECLAN GANLY <d.ganly@hotmail.com> 1647468731 +0000	Branch: renamed refs/heads/main to refs/heads/main
+72856e6b0ff81f7a9ea3066c8a9468cabe5981b2 72856e6b0ff81f7a9ea3066c8a9468cabe5981b2 DECLAN GANLY <d.ganly@hotmail.com> 1647468731 +0000	Branch: renamed refs/heads/main to refs/heads/main
