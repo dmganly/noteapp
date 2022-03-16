@@ -1,0 +1,2247 @@
+Started GET "/" for ::1 at 2022-02-19 16:08:32 +0000
+  [1m[35m (38.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 65.1ms | Allocations: 4588)
+  Rendered layout layouts/application.html.erb (Duration: 4771.0ms | Allocations: 96623)
+Completed 200 OK in 5250ms (Views: 4907.0ms | ActiveRecord: 0.0ms | Allocations: 103640)
+
+
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (265.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotes (20220219161502)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220219161502"]]
+  [1m[36mTRANSACTION (96.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (10.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-19 16:15:40.017576"], ["updated_at", "2022-02-19 16:15:40.017576"]]
+  [1m[36mTRANSACTION (102.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/notes" for ::1 at 2022-02-19 16:25:10 +0000
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for NotesController):
+  
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/new" for ::1 at 2022-02-19 16:25:33 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for ::1 at 2022-02-19 21:10:18 +0000
+  [1m[35m (12.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/" for ::1 at 2022-02-19 21:10:31 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 29.9ms | Allocations: 4227)
+  Rendered layout layouts/application.html.erb (Duration: 2442.9ms | Allocations: 38628)
+Completed 200 OK in 2606ms (Views: 2469.2ms | ActiveRecord: 0.0ms | Allocations: 42509)
+
+
+Started GET "/" for ::1 at 2022-02-19 21:22:06 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 27.5ms | Allocations: 1587)
+  Rendered layout layouts/application.html.erb (Duration: 250.1ms | Allocations: 4363)
+Completed 200 OK in 327ms (Views: 275.5ms | Allocations: 5558)
+
+
+Started GET "/" for ::1 at 2022-02-19 21:22:13 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 0.3ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 247.1ms | Allocations: 2562)
+Completed 200 OK in 300ms (Views: 252.9ms | Allocations: 2948)
+
+
+Started GET "/" for ::1 at 2022-02-19 21:22:33 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 0.3ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 221.5ms | Allocations: 2546)
+Completed 200 OK in 270ms (Views: 223.8ms | Allocations: 2925)
+
+
+Started GET "/" for ::1 at 2022-02-19 21:28:44 +0000
+  [1m[35m (10.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 40.4ms | Allocations: 4486)
+  Rendered layout layouts/application.html.erb (Duration: 2285.7ms | Allocations: 38999)
+Completed 200 OK in 2498ms (Views: 2346.3ms | ActiveRecord: 0.0ms | Allocations: 44856)
+
+
+Started GET "/" for ::1 at 2022-02-19 21:33:24 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 0.5ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1119.6ms | Allocations: 13694)
+Completed 200 OK in 1170ms (Views: 1124.2ms | Allocations: 14589)
+
+
+Started GET "/note" for ::1 at 2022-02-19 21:33:33 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/note"):
+  
+Started GET "/notes" for ::1 at 2022-02-19 21:33:52 +0000
+Processing by NotesController#index as HTML
+Completed 406 Not Acceptable in 56ms (Allocations: 851)
+
+
+  
+ActionController::MissingExactTemplate (NotesController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.2.2) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:214:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.2.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/notes/new" for ::1 at 2022-02-19 21:34:53 +0000
+Processing by NotesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:9:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 3045.8ms | Allocations: 29148)
+  Rendered notes/new.html.haml within layouts/application (Duration: 3087.8ms | Allocations: 30923)
+  Rendered layout layouts/application.html.erb (Duration: 3299.0ms | Allocations: 33170)
+Completed 200 OK in 3657ms (Views: 3309.9ms | ActiveRecord: 21.6ms | Allocations: 42445)
+
+
+Started POST "/notes" for ::1 at 2022-02-19 21:36:20 +0000
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"shopping, cleaning, working"}, "commit"=>"Create Note"}
+No template found for NotesController#create, rendering head :no_content
+Completed 204 No Content in 53ms (ActiveRecord: 0.0ms | Allocations: 899)
+
+
+Started POST "/notes" for ::1 at 2022-02-19 21:38:46 +0000
+  
+SyntaxError (/mnt/c/code/noteapp/app/controllers/notes_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/notes_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/notes_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/notes_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/__web_console/repl_sessions/0c8032f0453e21c638d0fb5cda5e1ae1/trace" for ::1 at 2022-02-19 21:39:04 +0000
+Started GET "/notes/new" for ::1 at 2022-02-19 21:40:03 +0000
+Processing by NotesController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:9:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 18.0ms | Allocations: 6917)
+  Rendered notes/new.html.haml within layouts/application (Duration: 20.5ms | Allocations: 7050)
+  Rendered layout layouts/application.html.erb (Duration: 1081.7ms | Allocations: 20427)
+Completed 200 OK in 1245ms (Views: 1086.0ms | ActiveRecord: 26.6ms | Allocations: 24053)
+
+
+Started POST "/notes" for ::1 at 2022-02-19 21:40:17 +0000
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"Sweep the floor"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:15:in `create'
+  [1m[36mNote Create (48.4ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Things I need to urgently do"], ["content", "Sweep the floor"], ["created_at", "2022-02-19 21:40:17.884268"], ["updated_at", "2022-02-19 21:40:17.884268"]]
+  ↳ app/controllers/notes_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (203.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:15:in `create'
+Redirected to http://localhost:3000/notes/1
+Completed 302 Found in 315ms (ActiveRecord: 251.8ms | Allocations: 3508)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 21:40:18 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+No template found for NotesController#show, rendering head :no_content
+Completed 204 No Content in 58ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started POST "/notes" for ::1 at 2022-02-19 21:42:53 +0000
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"Sweep the floor"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:15:in `create'
+  [1m[36mNote Create (13.3ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Things I need to urgently do"], ["content", "Sweep the floor"], ["created_at", "2022-02-19 21:42:53.866559"], ["updated_at", "2022-02-19 21:42:53.866559"]]
+  ↳ app/controllers/notes_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (107.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:15:in `create'
+Redirected to http://localhost:3000/notes/2
+Completed 302 Found in 178ms (ActiveRecord: 121.3ms | Allocations: 2203)
+
+
+Started GET "/notes/2" for ::1 at 2022-02-19 21:42:54 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 26.9ms | Allocations: 3058)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 3151)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 0.0ms | Allocations: 4359)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: %h1= @note.title
+    2: %p= @note.content
+  
+app/views/notes/show.html.haml:1
+Started GET "/notes/new" for ::1 at 2022-02-19 21:46:48 +0000
+  
+SyntaxError (/mnt/c/code/noteapp/app/controllers/notes_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+...efore_action :find_note, only [:show, :edit, :update, :destr...
+...                              ^
+):
+  
+app/controllers/notes_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+app/controllers/notes_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+app/controllers/notes_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+Started GET "/notes/new" for ::1 at 2022-02-19 21:47:41 +0000
+Processing by NotesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:10:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 40.8ms | Allocations: 8408)
+  Rendered notes/new.html.haml within layouts/application (Duration: 78.1ms | Allocations: 10202)
+  Rendered layout layouts/application.html.erb (Duration: 1060.2ms | Allocations: 23791)
+Completed 200 OK in 1223ms (Views: 1065.0ms | ActiveRecord: 21.5ms | Allocations: 27555)
+
+
+Started POST "/notes" for ::1 at 2022-02-19 21:47:57 +0000
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"wash"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:16:in `create'
+  [1m[36mNote Create (13.9ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Things I need to urgently do"], ["content", "wash"], ["created_at", "2022-02-19 21:47:57.616213"], ["updated_at", "2022-02-19 21:47:57.616213"]]
+  ↳ app/controllers/notes_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (156.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:16:in `create'
+Redirected to http://localhost:3000/notes/3
+Completed 302 Found in 238ms (ActiveRecord: 170.1ms | Allocations: 2444)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 21:47:58 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:32:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.5ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 219.1ms | Allocations: 2579)
+Completed 200 OK in 309ms (Views: 221.8ms | ActiveRecord: 4.6ms | Allocations: 5627)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 21:49:59 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:32:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 31.1ms | Allocations: 1915)
+  Rendered layout layouts/application.html.erb (Duration: 282.7ms | Allocations: 4673)
+Completed 200 OK in 385ms (Views: 309.2ms | ActiveRecord: 4.6ms | Allocations: 6394)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 21:54:06 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:32:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 28.7ms | Allocations: 1911)
+  Rendered layout layouts/application.html.erb (Duration: 241.8ms | Allocations: 4660)
+Completed 200 OK in 338ms (Views: 266.5ms | ActiveRecord: 3.3ms | Allocations: 6380)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 21:56:03 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:34:in `find_note'
+  [1m[36mNote Load (4.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:34:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.9ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 1058.6ms | Allocations: 13787)
+Completed 200 OK in 1239ms (Views: 1062.8ms | ActiveRecord: 30.7ms | Allocations: 18597)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 21:56:10 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 37.4ms | Allocations: 3039)
+  Rendered layout layouts/application.html.erb (Duration: 222.0ms | Allocations: 5532)
+Completed 200 OK in 277ms (Views: 220.4ms | ActiveRecord: 3.8ms | Allocations: 6056)
+
+
+Started GET "/notes/new" for ::1 at 2022-02-19 21:56:49 +0000
+Processing by NotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 39.4ms | Allocations: 8373)
+  Rendered notes/new.html.haml within layouts/application (Duration: 79.6ms | Allocations: 10195)
+  Rendered layout layouts/application.html.erb (Duration: 263.3ms | Allocations: 12399)
+Completed 200 OK in 316ms (Views: 265.2ms | ActiveRecord: 0.0ms | Allocations: 12891)
+
+
+Started POST "/notes" for ::1 at 2022-02-19 21:57:04 +0000
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Some new title", "content"=>"new note here"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+  [1m[36mNote Create (10.7ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Some new title"], ["content", "new note here"], ["created_at", "2022-02-19 21:57:04.432650"], ["updated_at", "2022-02-19 21:57:04.432650"]]
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (110.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+Redirected to http://localhost:3000/notes/4
+Completed 302 Found in 178ms (ActiveRecord: 121.8ms | Allocations: 2447)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 21:57:04 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:34:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.7ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 218.1ms | Allocations: 2617)
+Completed 200 OK in 276ms (Views: 220.9ms | ActiveRecord: 4.7ms | Allocations: 3527)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 21:57:06 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 8.6ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 192.7ms | Allocations: 3819)
+Completed 200 OK in 233ms (Views: 191.9ms | ActiveRecord: 3.2ms | Allocations: 4249)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:01:33 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  Rendered notes/index.html.haml within layouts/application (Duration: 15.2ms | Allocations: 2636)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 2721)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.0ms | Allocations: 3943)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check = @notes.each do |note|
+  %h2= Link_tonote.title, note
+  %p= time_ago_in_words(note.created_at)
+):
+1:    = @notes.each do |note|
+2:      %h2= Link_tonote.title, note
+3:      %p= time_ago_in_words(note.created_at)
+  
+app/views/notes/index.html.haml:3: syntax error, unexpected ')', expecting '='
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `ensure', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:3: syntax error, unexpected ')', expecting '='
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `ensure', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:3: syntax error, unexpected ')', expecting '='
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `ensure', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:3: syntax error, unexpected ')', expecting '='
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `ensure', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:3: syntax error, unexpected ')', expecting '='
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `ensure', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:3: syntax error, unexpected ')', expecting '='
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `ensure', expecting ')'
+app/views/notes/index.html.haml:4: syntax error, unexpected `end', expecting ')'
+Started GET "/notes" for ::1 at 2022-02-19 22:01:49 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (7.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 61.6ms | Allocations: 6667)
+  Rendered layout layouts/application.html.erb (Duration: 63.9ms | Allocations: 6754)
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 7.5ms | Allocations: 7921)
+
+
+  
+ActionView::Template::Error (undefined method `Link_to' for #<ActionView::Base:0x00000000025738>
+Did you mean?  link_to_if):
+    1: = @notes.each do |note|
+    2:   %h2= Link_to note.title, note
+    3:   %p= time_ago_in_words(note.created_at)
+  
+app/views/notes/index.html.haml:2
+app/views/notes/index.html.haml:1
+Started GET "/notes" for ::1 at 2022-02-19 22:02:39 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 21.1ms | Allocations: 5025)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 5107)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 4.9ms | Allocations: 5472)
+
+
+  
+ActionView::Template::Error (undefined method `Link_to' for #<ActionView::Base:0x00000000025a80>
+Did you mean?  link_to_if):
+    1: = @notes.each do |note|
+    2:   %h2= Link_to note.title, note
+    3:   %p= time_ago_in_words(note.created_at)
+  
+app/views/notes/index.html.haml:2
+app/views/notes/index.html.haml:1
+Started GET "/notes" for ::1 at 2022-02-19 22:02:44 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 18.2ms | Allocations: 5025)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 5107)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 4.3ms | Allocations: 5471)
+
+
+  
+ActionView::Template::Error (undefined method `Link_to' for #<ActionView::Base:0x00000000025d50>
+Did you mean?  link_to_if):
+    1: = @notes.each do |note|
+    2:   %h2= Link_to note.title, note
+    3:   %p= time_ago_in_words(note.created_at)
+  
+app/views/notes/index.html.haml:2
+app/views/notes/index.html.haml:1
+Started GET "/notes" for ::1 at 2022-02-19 22:02:56 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 42.3ms | Allocations: 3263)
+  Rendered layout layouts/application.html.erb (Duration: 315.0ms | Allocations: 6016)
+Completed 200 OK in 403ms (Views: 338.1ms | ActiveRecord: 4.7ms | Allocations: 7221)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:03:00 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:34:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 25.3ms | Allocations: 1883)
+  Rendered layout layouts/application.html.erb (Duration: 229.2ms | Allocations: 4356)
+Completed 200 OK in 297ms (Views: 232.5ms | ActiveRecord: 3.8ms | Allocations: 5310)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:03:02 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 13.2ms | Allocations: 1487)
+  Rendered layout layouts/application.html.erb (Duration: 202.2ms | Allocations: 3973)
+Completed 200 OK in 245ms (Views: 201.3ms | ActiveRecord: 3.5ms | Allocations: 4403)
+
+
+Started GET "/notes/2" for ::1 at 2022-02-19 22:03:04 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:34:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.7ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 174.6ms | Allocations: 2613)
+Completed 200 OK in 222ms (Views: 176.8ms | ActiveRecord: 3.9ms | Allocations: 3491)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:03:06 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 10.1ms | Allocations: 1488)
+  Rendered layout layouts/application.html.erb (Duration: 194.0ms | Allocations: 3992)
+Completed 200 OK in 241ms (Views: 200.2ms | ActiveRecord: 3.3ms | Allocations: 4423)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 22:03:07 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (7.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:34:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 2.1ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 337.6ms | Allocations: 2611)
+Completed 200 OK in 452ms (Views: 342.3ms | ActiveRecord: 7.4ms | Allocations: 3489)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:03:10 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (5.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 13.1ms | Allocations: 1487)
+  Rendered layout layouts/application.html.erb (Duration: 241.6ms | Allocations: 3977)
+Completed 200 OK in 288ms (Views: 239.1ms | ActiveRecord: 5.2ms | Allocations: 4407)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:05:54 +0000
+Processing by NotesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 37.0ms | Allocations: 2998)
+  Rendered layout layouts/application.html.erb (Duration: 1108.3ms | Allocations: 16634)
+Completed 200 OK in 1248ms (Views: 1086.9ms | ActiveRecord: 30.5ms | Allocations: 18949)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:05:59 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:38:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.9ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 202.5ms | Allocations: 2620)
+Completed 200 OK in 260ms (Views: 205.8ms | ActiveRecord: 3.9ms | Allocations: 4124)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:06:01 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 13.3ms | Allocations: 1487)
+  Rendered layout layouts/application.html.erb (Duration: 249.1ms | Allocations: 3969)
+Completed 200 OK in 295ms (Views: 247.4ms | ActiveRecord: 4.1ms | Allocations: 4399)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:23:03 +0000
+Processing by NotesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 54.2ms | Allocations: 4287)
+  Rendered layout layouts/application.html.erb (Duration: 1181.2ms | Allocations: 18074)
+Completed 200 OK in 1350ms (Views: 1206.5ms | ActiveRecord: 8.6ms | Allocations: 20738)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 22:23:26 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 25.5ms | Allocations: 2031)
+  Rendered layout layouts/application.html.erb (Duration: 229.9ms | Allocations: 4513)
+Completed 200 OK in 300ms (Views: 232.9ms | ActiveRecord: 4.1ms | Allocations: 6087)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:23:31 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 9.5ms | Allocations: 1487)
+  Rendered layout layouts/application.html.erb (Duration: 213.2ms | Allocations: 3969)
+Completed 200 OK in 259ms (Views: 211.7ms | ActiveRecord: 3.9ms | Allocations: 4399)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:23:35 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 284.1ms | Allocations: 2698)
+Completed 200 OK in 341ms (Views: 287.2ms | ActiveRecord: 4.0ms | Allocations: 3576)
+
+
+Started GET "/notes/4/edit" for ::1 at 2022-02-19 22:23:37 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+Completed 406 Not Acceptable in 63ms (ActiveRecord: 3.7ms | Allocations: 1311)
+
+
+  
+ActionController::MissingExactTemplate (NotesController#edit is missing a template for request formats: text/html):
+  
+actionpack (7.0.2.2) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:214:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.2.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/notes/4" for ::1 at 2022-02-19 22:23:42 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.9ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 245.6ms | Allocations: 2699)
+Completed 200 OK in 309ms (Views: 249.1ms | ActiveRecord: 3.6ms | Allocations: 3527)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:23:44 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 208.9ms | Allocations: 2706)
+Completed 200 OK in 262ms (Views: 211.6ms | ActiveRecord: 3.6ms | Allocations: 3612)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:23:49 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.0ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 282.7ms | Allocations: 2689)
+Completed 200 OK in 347ms (Views: 286.2ms | ActiveRecord: 4.7ms | Allocations: 3595)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:26:33 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 29.2ms | Allocations: 2121)
+  Rendered layout layouts/application.html.erb (Duration: 285.8ms | Allocations: 4869)
+Completed 200 OK in 412ms (Views: 316.0ms | ActiveRecord: 4.0ms | Allocations: 6587)
+
+
+Started GET "/notes/4/edit" for ::1 at 2022-02-19 22:26:36 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 42.4ms | Allocations: 8485)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 80.9ms | Allocations: 10409)
+  Rendered layout layouts/application.html.erb (Duration: 257.7ms | Allocations: 12607)
+Completed 200 OK in 325ms (Views: 259.7ms | ActiveRecord: 4.6ms | Allocations: 13585)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:26:39 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 220.6ms | Allocations: 2693)
+Completed 200 OK in 275ms (Views: 223.2ms | ActiveRecord: 3.7ms | Allocations: 3593)
+
+
+Started GET "/notes/4/edit" for ::1 at 2022-02-19 22:26:44 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 16.2ms | Allocations: 6774)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 17.6ms | Allocations: 6948)
+  Rendered layout layouts/application.html.erb (Duration: 197.7ms | Allocations: 9141)
+Completed 200 OK in 246ms (Views: 200.1ms | ActiveRecord: 3.9ms | Allocations: 10046)
+
+
+Started PATCH "/notes/4" for ::1 at 2022-02-19 22:27:16 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Some new title", "content"=>"new note here with another bit"}, "commit"=>"Update Note", "id"=>"4"}
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mNote Update (12.4ms)[0m  [1m[33mUPDATE "notes" SET "content" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["content", "new note here with another bit"], ["updated_at", "2022-02-19 22:27:17.154467"], ["id", 4]]
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (138.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+Redirected to 
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 155.1ms | Allocations: 3393)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/notes_controller.rb:31:in `update'
+Started GET "/notes/4/edit" for ::1 at 2022-02-19 22:29:02 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mNote Load (4.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 19.5ms | Allocations: 6905)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 21.5ms | Allocations: 7086)
+  Rendered layout layouts/application.html.erb (Duration: 1099.9ms | Allocations: 20452)
+Completed 200 OK in 1282ms (Views: 1103.9ms | ActiveRecord: 31.9ms | Allocations: 25295)
+
+
+Started PATCH "/notes/4" for ::1 at 2022-02-19 22:29:06 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Some new title", "content"=>"new note here with another bit"}, "commit"=>"Update Note", "id"=>"4"}
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+Redirected to http://localhost:3000/notes/4
+Completed 302 Found in 49ms (ActiveRecord: 3.2ms | Allocations: 1350)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 22:29:07 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.0ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 215.5ms | Allocations: 2703)
+Completed 200 OK in 269ms (Views: 217.9ms | ActiveRecord: 4.5ms | Allocations: 3598)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:29:09 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (8.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 70.8ms | Allocations: 3276)
+  Rendered layout layouts/application.html.erb (Duration: 320.1ms | Allocations: 5747)
+Completed 200 OK in 427ms (Views: 315.2ms | ActiveRecord: 8.1ms | Allocations: 6270)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:29:11 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.1ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 244.4ms | Allocations: 2689)
+Completed 200 OK in 294ms (Views: 247.8ms | ActiveRecord: 4.2ms | Allocations: 3567)
+
+
+Started GET "/notes/3/edit" for ::1 at 2022-02-19 22:29:13 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 15.8ms | Allocations: 6758)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 17.8ms | Allocations: 6932)
+  Rendered layout layouts/application.html.erb (Duration: 209.0ms | Allocations: 9126)
+Completed 200 OK in 258ms (Views: 211.4ms | ActiveRecord: 3.9ms | Allocations: 10034)
+
+
+Started PATCH "/notes/3" for ::1 at 2022-02-19 22:29:18 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"wash up"}, "commit"=>"Update Note", "id"=>"3"}
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mNote Update (20.1ms)[0m  [1m[33mUPDATE "notes" SET "content" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["content", "wash up"], ["updated_at", "2022-02-19 22:29:18.600505"], ["id", 3]]
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (167.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+Redirected to http://localhost:3000/notes/3
+Completed 302 Found in 256ms (ActiveRecord: 191.4ms | Allocations: 2871)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:29:18 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.0ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 220.4ms | Allocations: 2681)
+Completed 200 OK in 279ms (Views: 224.2ms | ActiveRecord: 4.0ms | Allocations: 3525)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:29:22 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 20.2ms | Allocations: 1470)
+  Rendered layout layouts/application.html.erb (Duration: 218.2ms | Allocations: 3953)
+Completed 200 OK in 267ms (Views: 216.9ms | ActiveRecord: 4.3ms | Allocations: 4383)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:29:29 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.6ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 201.1ms | Allocations: 2695)
+Completed 200 OK in 256ms (Views: 203.6ms | ActiveRecord: 3.9ms | Allocations: 3575)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:34:41 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 33.3ms | Allocations: 2122)
+  Rendered layout layouts/application.html.erb (Duration: 294.6ms | Allocations: 4868)
+Completed 200 OK in 393ms (Views: 327.1ms | ActiveRecord: 4.3ms | Allocations: 6589)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:34:44 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 41.4ms | Allocations: 3207)
+  Rendered layout layouts/application.html.erb (Duration: 230.7ms | Allocations: 5687)
+Completed 200 OK in 283ms (Views: 229.7ms | ActiveRecord: 3.5ms | Allocations: 6193)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 22:34:54 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.1ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 215.1ms | Allocations: 2684)
+Completed 200 OK in 271ms (Views: 217.7ms | ActiveRecord: 4.1ms | Allocations: 3562)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 22:34:56 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.1ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 225.7ms | Allocations: 2692)
+Completed 200 OK in 282ms (Views: 228.7ms | ActiveRecord: 4.0ms | Allocations: 3598)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:34:59 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 13.0ms | Allocations: 1461)
+  Rendered layout layouts/application.html.erb (Duration: 216.2ms | Allocations: 3933)
+Completed 200 OK in 260ms (Views: 215.5ms | ActiveRecord: 3.6ms | Allocations: 4363)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:36:11 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 2.6ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 186.4ms | Allocations: 2692)
+Completed 200 OK in 239ms (Views: 189.7ms | ActiveRecord: 3.4ms | Allocations: 3570)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:36:13 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.6ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 178.4ms | Allocations: 2682)
+Completed 200 OK in 224ms (Views: 180.5ms | ActiveRecord: 3.2ms | Allocations: 3588)
+
+
+Started GET "/" for ::1 at 2022-02-19 22:37:00 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 39.8ms | Allocations: 1553)
+  Rendered layout layouts/application.html.erb (Duration: 1217.4ms | Allocations: 15119)
+Completed 200 OK in 1298ms (Views: 1232.7ms | Allocations: 16159)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:37:16 +0000
+Processing by NotesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 37.2ms | Allocations: 2914)
+  Rendered layout layouts/application.html.erb (Duration: 227.0ms | Allocations: 5418)
+Completed 200 OK in 380ms (Views: 236.8ms | ActiveRecord: 27.2ms | Allocations: 7726)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:37:25 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 214)
+  Rendered layout layouts/application.html.erb (Duration: 209.6ms | Allocations: 2708)
+Completed 200 OK in 266ms (Views: 212.6ms | ActiveRecord: 4.1ms | Allocations: 4214)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:37:28 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.9ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 205.5ms | Allocations: 2676)
+Completed 200 OK in 261ms (Views: 207.7ms | ActiveRecord: 4.1ms | Allocations: 3582)
+
+
+Started GET "/notes/3/edit" for ::1 at 2022-02-19 22:37:31 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 40.5ms | Allocations: 8439)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 82.5ms | Allocations: 10383)
+  Rendered layout layouts/application.html.erb (Duration: 284.1ms | Allocations: 12586)
+Completed 200 OK in 351ms (Views: 286.3ms | ActiveRecord: 3.8ms | Allocations: 13563)
+
+
+Started PATCH "/notes/3" for ::1 at 2022-02-19 22:37:35 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"wash up"}, "commit"=>"Update Note", "id"=>"3"}
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+Redirected to http://localhost:3000/notes/3
+Completed 302 Found in 58ms (ActiveRecord: 3.6ms | Allocations: 1340)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:37:35 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (6.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 2.6ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 356.0ms | Allocations: 2694)
+Completed 200 OK in 452ms (Views: 361.7ms | ActiveRecord: 6.1ms | Allocations: 3590)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:37:38 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 10.9ms | Allocations: 1461)
+  Rendered layout layouts/application.html.erb (Duration: 182.4ms | Allocations: 3947)
+Completed 200 OK in 222ms (Views: 181.1ms | ActiveRecord: 3.3ms | Allocations: 4377)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:37:47 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.8ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 207.4ms | Allocations: 2682)
+Completed 200 OK in 261ms (Views: 209.8ms | ActiveRecord: 4.0ms | Allocations: 3561)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:37:49 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.1ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 188.5ms | Allocations: 2703)
+Completed 200 OK in 240ms (Views: 191.1ms | ActiveRecord: 3.7ms | Allocations: 3609)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:37:52 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 10.9ms | Allocations: 1461)
+  Rendered layout layouts/application.html.erb (Duration: 215.8ms | Allocations: 3946)
+Completed 200 OK in 261ms (Views: 214.2ms | ActiveRecord: 3.9ms | Allocations: 4376)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:47:02 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mNote Load (4.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 3.5ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 259.8ms | Allocations: 2698)
+Completed 200 OK in 344ms (Views: 263.6ms | ActiveRecord: 9.4ms | Allocations: 4109)
+
+
+Started GET "/notes/3/edit" for ::1 at 2022-02-19 22:47:04 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 34.2ms | Allocations: 6772)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 37.5ms | Allocations: 6946)
+  Rendered layout layouts/application.html.erb (Duration: 235.3ms | Allocations: 9139)
+Completed 200 OK in 291ms (Views: 240.2ms | ActiveRecord: 3.3ms | Allocations: 10044)
+
+
+Started PATCH "/notes/3" for ::1 at 2022-02-19 22:47:08 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"wash up now"}, "commit"=>"Update Note", "id"=>"3"}
+  [1m[36mNote Load (3.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mNote Update (9.9ms)[0m  [1m[33mUPDATE "notes" SET "content" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["content", "wash up now"], ["updated_at", "2022-02-19 22:47:09.196313"], ["id", 3]]
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (134.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+Redirected to http://localhost:3000/notes/3
+Completed 302 Found in 219ms (ActiveRecord: 148.3ms | Allocations: 2870)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:47:09 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 2.1ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 209.6ms | Allocations: 2686)
+Completed 200 OK in 256ms (Views: 215.6ms | ActiveRecord: 3.0ms | Allocations: 3530)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 22:48:42 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 34.6ms | Allocations: 2122)
+  Rendered layout layouts/application.html.erb (Duration: 259.2ms | Allocations: 4855)
+Completed 200 OK in 366ms (Views: 285.7ms | ActiveRecord: 4.2ms | Allocations: 6573)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 22:48:45 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 36.2ms | Allocations: 3292)
+  Rendered layout layouts/application.html.erb (Duration: 212.3ms | Allocations: 5765)
+Completed 200 OK in 265ms (Views: 211.1ms | ActiveRecord: 3.6ms | Allocations: 6271)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:05:41 +0000
+Processing by NotesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 20.8ms | Allocations: 1470)
+  Rendered layout layouts/application.html.erb (Duration: 256.1ms | Allocations: 3954)
+Completed 200 OK in 343ms (Views: 260.2ms | ActiveRecord: 9.5ms | Allocations: 4907)
+
+
+Started GET "/notes/new" for ::1 at 2022-02-19 23:05:47 +0000
+Processing by NotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 73.2ms | Allocations: 8184)
+  Rendered notes/new.html.haml within layouts/application (Duration: 123.8ms | Allocations: 10006)
+  Rendered layout layouts/application.html.erb (Duration: 354.3ms | Allocations: 12210)
+Completed 200 OK in 420ms (Views: 356.9ms | ActiveRecord: 0.0ms | Allocations: 12705)
+
+
+Started POST "/notes" for ::1 at 2022-02-19 23:05:56 +0000
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"test", "content"=>"test"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+  [1m[36mNote Create (13.6ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["content", "test"], ["created_at", "2022-02-19 23:05:57.027380"], ["updated_at", "2022-02-19 23:05:57.027380"]]
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (98.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+Redirected to http://localhost:3000/notes/5
+Completed 302 Found in 175ms (ActiveRecord: 112.1ms | Allocations: 2351)
+
+
+Started GET "/notes/5" for ::1 at 2022-02-19 23:05:57 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mNote Load (2.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.7ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 192.7ms | Allocations: 2685)
+Completed 200 OK in 239ms (Views: 196.8ms | ActiveRecord: 2.6ms | Allocations: 3610)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:05:59 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 15.6ms | Allocations: 1634)
+  Rendered layout layouts/application.html.erb (Duration: 250.9ms | Allocations: 4114)
+Completed 200 OK in 299ms (Views: 249.4ms | ActiveRecord: 4.3ms | Allocations: 4544)
+
+
+Started GET "/notes/5" for ::1 at 2022-02-19 23:06:03 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.8ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 222.7ms | Allocations: 2682)
+Completed 200 OK in 281ms (Views: 226.7ms | ActiveRecord: 3.9ms | Allocations: 3560)
+
+
+Started GET "/notes/5" for ::1 at 2022-02-19 23:06:05 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNote Load (3.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.1ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 210.0ms | Allocations: 2681)
+Completed 200 OK in 253ms (Views: 212.4ms | ActiveRecord: 3.4ms | Allocations: 3587)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:06:08 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 17.1ms | Allocations: 1634)
+  Rendered layout layouts/application.html.erb (Duration: 241.9ms | Allocations: 4120)
+Completed 200 OK in 291ms (Views: 240.1ms | ActiveRecord: 4.4ms | Allocations: 4550)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 23:06:39 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.5ms | Allocations: 233)
+  Rendered layout layouts/application.html.erb (Duration: 940.8ms | Allocations: 13893)
+Completed 200 OK in 1110ms (Views: 946.4ms | ActiveRecord: 25.6ms | Allocations: 18740)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 23:06:43 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.0ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 196.2ms | Allocations: 2697)
+Completed 200 OK in 253ms (Views: 199.0ms | ActiveRecord: 3.2ms | Allocations: 3603)
+
+
+Started GET "/notes/3/edit" for ::1 at 2022-02-19 23:06:47 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 17.2ms | Allocations: 6839)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 47.0ms | Allocations: 8710)
+  Rendered layout layouts/application.html.erb (Duration: 276.4ms | Allocations: 10912)
+Completed 200 OK in 347ms (Views: 279.5ms | ActiveRecord: 3.8ms | Allocations: 11893)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 23:06:50 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 2.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 232.9ms | Allocations: 2685)
+Completed 200 OK in 287ms (Views: 235.0ms | ActiveRecord: 4.0ms | Allocations: 3585)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:06:51 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 12.2ms | Allocations: 1669)
+  Rendered layout layouts/application.html.erb (Duration: 202.4ms | Allocations: 4159)
+Completed 200 OK in 245ms (Views: 201.2ms | ActiveRecord: 4.2ms | Allocations: 4604)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 23:06:54 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.8ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 225.8ms | Allocations: 2704)
+Completed 200 OK in 277ms (Views: 229.4ms | ActiveRecord: 3.7ms | Allocations: 3582)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-19 23:06:55 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.4ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 192.4ms | Allocations: 2682)
+Completed 200 OK in 240ms (Views: 195.0ms | ActiveRecord: 3.2ms | Allocations: 3588)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:06:58 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 16.7ms | Allocations: 1634)
+  Rendered layout layouts/application.html.erb (Duration: 226.9ms | Allocations: 4114)
+Completed 200 OK in 272ms (Views: 224.8ms | ActiveRecord: 4.6ms | Allocations: 4544)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 23:06:59 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 3.1ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 232.1ms | Allocations: 2686)
+Completed 200 OK in 287ms (Views: 234.4ms | ActiveRecord: 3.8ms | Allocations: 3568)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 23:07:01 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.8ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 192.1ms | Allocations: 2684)
+Completed 200 OK in 243ms (Views: 195.3ms | ActiveRecord: 3.2ms | Allocations: 3590)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:07:03 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 13.0ms | Allocations: 1634)
+  Rendered layout layouts/application.html.erb (Duration: 205.2ms | Allocations: 4110)
+Completed 200 OK in 245ms (Views: 203.5ms | ActiveRecord: 3.8ms | Allocations: 4540)
+
+
+Started GET "/notes/5" for ::1 at 2022-02-19 23:07:07 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNote Load (3.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.9ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 190.4ms | Allocations: 2694)
+Completed 200 OK in 243ms (Views: 193.3ms | ActiveRecord: 3.3ms | Allocations: 3572)
+
+
+Started GET "/notes/5" for ::1 at 2022-02-19 23:07:08 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.9ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 218.3ms | Allocations: 2677)
+Completed 200 OK in 274ms (Views: 221.1ms | ActiveRecord: 4.3ms | Allocations: 3583)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:07:10 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 9.3ms | Allocations: 1634)
+  Rendered layout layouts/application.html.erb (Duration: 195.4ms | Allocations: 4116)
+Completed 200 OK in 235ms (Views: 196.6ms | ActiveRecord: 3.2ms | Allocations: 4546)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:10:23 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 49.1ms | Allocations: 3495)
+  Rendered layout layouts/application.html.erb (Duration: 273.2ms | Allocations: 6247)
+Completed 200 OK in 360ms (Views: 297.9ms | ActiveRecord: 3.8ms | Allocations: 7486)
+
+
+Started GET "/notes/5" for ::1 at 2022-02-19 23:10:30 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 28.1ms | Allocations: 2092)
+  Rendered layout layouts/application.html.erb (Duration: 231.5ms | Allocations: 4569)
+Completed 200 OK in 297ms (Views: 233.4ms | ActiveRecord: 3.7ms | Allocations: 5523)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:10:32 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 10.8ms | Allocations: 1651)
+  Rendered layout layouts/application.html.erb (Duration: 195.1ms | Allocations: 4135)
+Completed 200 OK in 234ms (Views: 194.2ms | ActiveRecord: 3.5ms | Allocations: 4565)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:23:49 +0000
+Processing by NotesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 57.4ms | Allocations: 4537)
+  Rendered layout layouts/application.html.erb (Duration: 1399.5ms | Allocations: 18414)
+Completed 200 OK in 1592ms (Views: 1424.2ms | ActiveRecord: 10.2ms | Allocations: 21075)
+
+
+Started GET "/" for ::1 at 2022-02-19 23:24:31 +0000
+  [1m[35m (32.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 45.2ms | Allocations: 4495)
+  Rendered layout layouts/application.html.erb (Duration: 2230.1ms | Allocations: 39068)
+Completed 200 OK in 2455ms (Views: 2287.3ms | ActiveRecord: 0.0ms | Allocations: 44925)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:25:12 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 249.9ms | Allocations: 9962)
+  Rendered layout layouts/application.html.erb (Duration: 477.9ms | Allocations: 12509)
+Completed 200 OK in 614ms (Views: 463.4ms | ActiveRecord: 26.3ms | Allocations: 14451)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 23:25:25 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (4.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 25.2ms | Allocations: 2061)
+  Rendered layout layouts/application.html.erb (Duration: 208.0ms | Allocations: 4550)
+Completed 200 OK in 281ms (Views: 210.1ms | ActiveRecord: 4.5ms | Allocations: 7606)
+
+
+Started GET "/notes/1/edit" for ::1 at 2022-02-19 23:25:29 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 518.7ms | Allocations: 21125)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 561.3ms | Allocations: 23102)
+  Rendered layout layouts/application.html.erb (Duration: 751.1ms | Allocations: 25317)
+Completed 200 OK in 822ms (Views: 753.3ms | ActiveRecord: 3.8ms | Allocations: 26299)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 23:25:32 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (3.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 219.2ms | Allocations: 2687)
+Completed 200 OK in 274ms (Views: 223.3ms | ActiveRecord: 3.5ms | Allocations: 3612)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 23:25:33 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.5ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 225.6ms | Allocations: 2687)
+Completed 200 OK in 281ms (Views: 227.7ms | ActiveRecord: 4.2ms | Allocations: 3611)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 23:26:24 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (3.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.3ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 202.5ms | Allocations: 2697)
+Completed 200 OK in 263ms (Views: 207.0ms | ActiveRecord: 3.4ms | Allocations: 3600)
+
+
+Started GET "/notes/1" for ::1 at 2022-02-19 23:26:27 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (4.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 2.3ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 208.8ms | Allocations: 2699)
+Completed 200 OK in 269ms (Views: 212.4ms | ActiveRecord: 4.6ms | Allocations: 3605)
+
+
+Started GET "/" for ::1 at 2022-02-19 23:27:22 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 0.8ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 191.0ms | Allocations: 2540)
+Completed 200 OK in 232ms (Views: 193.3ms | ActiveRecord: 0.0ms | Allocations: 2930)
+
+
+Started GET "/" for ::1 at 2022-02-19 23:28:08 +0000
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (Duration: 0.6ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 186.0ms | Allocations: 2553)
+Completed 200 OK in 227ms (Views: 188.1ms | ActiveRecord: 0.0ms | Allocations: 2942)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:28:16 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 15.5ms | Allocations: 1681)
+  Rendered layout layouts/application.html.erb (Duration: 238.6ms | Allocations: 4163)
+Completed 200 OK in 288ms (Views: 236.9ms | ActiveRecord: 4.4ms | Allocations: 4591)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 23:28:18 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.0ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 217.6ms | Allocations: 2684)
+Completed 200 OK in 274ms (Views: 220.6ms | ActiveRecord: 3.8ms | Allocations: 3562)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 23:28:24 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 251.7ms | Allocations: 2685)
+Completed 200 OK in 303ms (Views: 254.8ms | ActiveRecord: 3.3ms | Allocations: 3591)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 23:28:33 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.8ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 216.1ms | Allocations: 2694)
+Completed 200 OK in 274ms (Views: 218.7ms | ActiveRecord: 3.8ms | Allocations: 3600)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:29:20 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 12.7ms | Allocations: 1678)
+  Rendered layout layouts/application.html.erb (Duration: 236.4ms | Allocations: 4154)
+Completed 200 OK in 283ms (Views: 234.7ms | ActiveRecord: 4.1ms | Allocations: 4584)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 23:29:22 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 218.2ms | Allocations: 2698)
+Completed 200 OK in 275ms (Views: 221.6ms | ActiveRecord: 4.2ms | Allocations: 3578)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 23:29:25 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.9ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 181.3ms | Allocations: 2680)
+Completed 200 OK in 231ms (Views: 184.2ms | ActiveRecord: 4.1ms | Allocations: 3586)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 23:29:27 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 0.9ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 183.6ms | Allocations: 2703)
+Completed 200 OK in 232ms (Views: 186.2ms | ActiveRecord: 4.0ms | Allocations: 3610)
+
+
+Started GET "/notes/4/edit" for ::1 at 2022-02-19 23:29:29 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 19.2ms | Allocations: 6778)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 21.8ms | Allocations: 6952)
+  Rendered layout layouts/application.html.erb (Duration: 243.0ms | Allocations: 9160)
+Completed 200 OK in 307ms (Views: 247.1ms | ActiveRecord: 4.2ms | Allocations: 10065)
+
+
+Started PATCH "/notes/4" for ::1 at 2022-02-19 23:29:35 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"", "content"=>""}, "commit"=>"Update Note", "id"=>"4"}
+  [1m[36mNote Load (4.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mNote Update (47.8ms)[0m  [1m[33mUPDATE "notes" SET "title" = ?, "content" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["title", ""], ["content", ""], ["updated_at", "2022-02-19 23:29:35.539708"], ["id", 4]]
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (142.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+Redirected to http://localhost:3000/notes/4
+Completed 302 Found in 274ms (ActiveRecord: 195.1ms | Allocations: 4098)
+
+
+Started GET "/notes/4" for ::1 at 2022-02-19 23:29:35 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.3ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 245.4ms | Allocations: 2686)
+Completed 200 OK in 316ms (Views: 248.7ms | ActiveRecord: 4.2ms | Allocations: 3587)
+
+
+Started GET "/notes" for ::1 at 2022-02-19 23:29:39 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 11.6ms | Allocations: 1676)
+  Rendered layout layouts/application.html.erb (Duration: 227.2ms | Allocations: 4155)
+Completed 200 OK in 276ms (Views: 226.6ms | ActiveRecord: 4.3ms | Allocations: 4586)
+
+
+Started GET "/notes" for ::1 at 2022-02-20 00:00:15 +0000
+Processing by NotesController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (15.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 89.9ms | Allocations: 1663)
+  Rendered layout layouts/application.html.erb (Duration: 358.5ms | Allocations: 4151)
+Completed 200 OK in 525ms (Views: 365.9ms | ActiveRecord: 29.7ms | Allocations: 5115)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-20 00:00:18 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (9.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 2.8ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 242.4ms | Allocations: 2686)
+Completed 200 OK in 307ms (Views: 246.0ms | ActiveRecord: 9.1ms | Allocations: 3580)
+
+
+Started GET "/notes/3/edit" for ::1 at 2022-02-20 00:00:20 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 468.5ms | Allocations: 6742)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 473.0ms | Allocations: 6916)
+  Rendered layout layouts/application.html.erb (Duration: 710.3ms | Allocations: 9125)
+Completed 200 OK in 912ms (Views: 716.1ms | ActiveRecord: 3.5ms | Allocations: 10031)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-20 00:00:23 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 230.3ms | Allocations: 2703)
+Completed 200 OK in 290ms (Views: 238.1ms | ActiveRecord: 4.1ms | Allocations: 3605)
+
+
+Started GET "/notes/3" for ::1 at 2022-02-20 00:00:24 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.3ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 216.4ms | Allocations: 2694)
+Completed 200 OK in 272ms (Views: 221.0ms | ActiveRecord: 3.6ms | Allocations: 3600)
+
+
+Started GET "/notes" for ::1 at 2022-02-20 00:00:29 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (5.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 15.0ms | Allocations: 1667)
+  Rendered layout layouts/application.html.erb (Duration: 217.0ms | Allocations: 4145)
+Completed 200 OK in 260ms (Views: 214.5ms | ActiveRecord: 5.0ms | Allocations: 4572)
+
+
+Started GET "/notes" for ::1 at 2022-02-20 00:02:33 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (3.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 49.5ms | Allocations: 3516)
+  Rendered layout layouts/application.html.erb (Duration: 318.0ms | Allocations: 6280)
+Completed 200 OK in 416ms (Views: 351.7ms | ActiveRecord: 3.4ms | Allocations: 7522)
+
+
+Started GET "/notes/2" for ::1 at 2022-02-20 00:02:38 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (3.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 27.8ms | Allocations: 2097)
+  Rendered layout layouts/application.html.erb (Duration: 214.3ms | Allocations: 4596)
+Completed 200 OK in 268ms (Views: 216.7ms | ActiveRecord: 3.0ms | Allocations: 5552)
+
+
+Started GET "/notes/2/edit" for ::1 at 2022-02-20 00:02:39 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (2.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 53.6ms | Allocations: 8252)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 95.1ms | Allocations: 10180)
+  Rendered layout layouts/application.html.erb (Duration: 282.4ms | Allocations: 12374)
+Completed 200 OK in 352ms (Views: 284.9ms | ActiveRecord: 2.7ms | Allocations: 13352)
+
+
+Started PATCH "/notes/2" for ::1 at 2022-02-20 00:02:43 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"Sweep the floor"}, "commit"=>"Update Note", "id"=>"2"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+Redirected to http://localhost:3000/notes/2
+Completed 302 Found in 52ms (ActiveRecord: 4.0ms | Allocations: 1264)
+
+
+Started GET "/notes/2" for ::1 at 2022-02-20 00:02:43 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (3.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.4ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 193.4ms | Allocations: 2700)
+Completed 200 OK in 245ms (Views: 197.4ms | ActiveRecord: 3.1ms | Allocations: 3596)
+
+
+Started GET "/notes/2/edit" for ::1 at 2022-02-20 00:02:48 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (3.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 30.5ms | Allocations: 6753)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 32.6ms | Allocations: 6910)
+  Rendered layout layouts/application.html.erb (Duration: 228.9ms | Allocations: 9104)
+Completed 200 OK in 284ms (Views: 232.6ms | ActiveRecord: 3.8ms | Allocations: 10009)
+
+
+Started PATCH "/notes/2" for ::1 at 2022-02-20 00:02:53 +0000
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"Things I need to urgently do", "content"=>"Sweep the floorgggg"}, "commit"=>"Update Note", "id"=>"2"}
+  [1m[36mNote Load (3.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mNote Update (17.0ms)[0m  [1m[33mUPDATE "notes" SET "content" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["content", "Sweep the floorgggg"], ["updated_at", "2022-02-20 00:02:53.454540"], ["id", 2]]
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (94.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:30:in `update'
+Redirected to http://localhost:3000/notes/2
+Completed 302 Found in 175ms (ActiveRecord: 114.7ms | Allocations: 2857)
+
+
+Started GET "/notes/2" for ::1 at 2022-02-20 00:02:53 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.6ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 208.4ms | Allocations: 2681)
+Completed 200 OK in 265ms (Views: 214.2ms | ActiveRecord: 3.7ms | Allocations: 3525)
+
+
+Started GET "/notes/2" for ::1 at 2022-02-20 00:02:57 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.0ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 182.6ms | Allocations: 2700)
+Completed 200 OK in 232ms (Views: 185.2ms | ActiveRecord: 3.6ms | Allocations: 3607)
+
+
+Started GET "/notes/2" for ::1 at 2022-02-20 00:02:59 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (3.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.3ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 178.6ms | Allocations: 2700)
+Completed 200 OK in 226ms (Views: 181.1ms | ActiveRecord: 3.2ms | Allocations: 3611)
+
+
+Started GET "/notes/2/edit" for ::1 at 2022-02-20 00:03:43 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (5.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 51.2ms | Allocations: 6771)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 54.5ms | Allocations: 6928)
+  Rendered layout layouts/application.html.erb (Duration: 291.7ms | Allocations: 9135)
+Completed 200 OK in 366ms (Views: 299.5ms | ActiveRecord: 5.1ms | Allocations: 10041)
+
+
+Started GET "/notes" for ::1 at 2022-02-20 00:03:46 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 19.2ms | Allocations: 1668)
+  Rendered layout layouts/application.html.erb (Duration: 241.1ms | Allocations: 4168)
+Completed 200 OK in 291ms (Views: 241.0ms | ActiveRecord: 4.4ms | Allocations: 4593)
+
+
+Started GET "/notes/new" for ::1 at 2022-02-20 00:03:58 +0000
+Processing by NotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 23.8ms | Allocations: 6635)
+  Rendered notes/new.html.haml within layouts/application (Duration: 59.9ms | Allocations: 8387)
+  Rendered layout layouts/application.html.erb (Duration: 300.8ms | Allocations: 10606)
+Completed 200 OK in 365ms (Views: 304.3ms | ActiveRecord: 0.0ms | Allocations: 11121)
+
+
+Started POST "/notes" for ::1 at 2022-02-20 00:04:13 +0000
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"test22222", "content"=>"222222222222222222222222"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+  [1m[36mNote Create (42.3ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test22222"], ["content", "222222222222222222222222"], ["created_at", "2022-02-20 00:04:14.130980"], ["updated_at", "2022-02-20 00:04:14.130980"]]
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (120.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:18:in `create'
+Redirected to http://localhost:3000/notes/6
+Completed 302 Found in 242ms (ActiveRecord: 163.0ms | Allocations: 2436)
+
+
+Started GET "/notes/6" for ::1 at 2022-02-20 00:04:14 +0000
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mNote Load (4.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 222.1ms | Allocations: 2685)
+Completed 200 OK in 280ms (Views: 225.4ms | ActiveRecord: 4.0ms | Allocations: 3545)
+
+
+Started GET "/notes" for ::1 at 2022-02-20 00:04:16 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 14.7ms | Allocations: 1833)
+  Rendered layout layouts/application.html.erb (Duration: 248.6ms | Allocations: 4317)
+Completed 200 OK in 298ms (Views: 246.1ms | ActiveRecord: 4.9ms | Allocations: 4748)
+
+
+Started GET "/notes/6" for ::1 at 2022-02-20 00:04:21 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mNote Load (3.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.9ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 217.3ms | Allocations: 2676)
+Completed 200 OK in 279ms (Views: 222.1ms | ActiveRecord: 3.6ms | Allocations: 3554)
+
+
+Started GET "/notes/6" for ::1 at 2022-02-20 00:04:23 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.0ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 232.7ms | Allocations: 2686)
+Completed 200 OK in 291ms (Views: 235.9ms | ActiveRecord: 4.2ms | Allocations: 3592)
+
+
+Started GET "/notes" for ::1 at 2022-02-20 00:04:26 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (5.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 20.7ms | Allocations: 1828)
+  Rendered layout layouts/application.html.erb (Duration: 292.8ms | Allocations: 4310)
+Completed 200 OK in 376ms (Views: 289.9ms | ActiveRecord: 5.4ms | Allocations: 4740)
+
+
+Started GET "/notes/6" for ::1 at 2022-02-20 00:04:28 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mNote Load (4.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.haml within layouts/application
+  Rendered notes/show.html.haml within layouts/application (Duration: 1.2ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 322.4ms | Allocations: 2706)
+Completed 200 OK in 388ms (Views: 326.4ms | ActiveRecord: 4.3ms | Allocations: 3585)
+
+
+Started GET "/notes/6/edit" for ::1 at 2022-02-20 00:04:29 +0000
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mNote Load (4.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:45:in `find_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.haml within layouts/application
+  Rendered notes/_form.html.haml (Duration: 17.1ms | Allocations: 6785)
+  Rendered notes/edit.html.haml within layouts/application (Duration: 20.5ms | Allocations: 6942)
+  Rendered layout layouts/application.html.erb (Duration: 248.5ms | Allocations: 9149)
+Completed 200 OK in 306ms (Views: 251.8ms | ActiveRecord: 4.1ms | Allocations: 10056)
+
+
+Started GET "/notes" for ::1 at 2022-02-20 00:04:32 +0000
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.haml within layouts/application
+  [1m[36mNote Load (4.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  ↳ app/views/notes/index.html.haml:1
+  Rendered notes/index.html.haml within layouts/application (Duration: 11.0ms | Allocations: 1829)
+  Rendered layout layouts/application.html.erb (Duration: 244.3ms | Allocations: 4302)
+Completed 200 OK in 294ms (Views: 242.9ms | ActiveRecord: 4.4ms | Allocations: 4726)
+
+
